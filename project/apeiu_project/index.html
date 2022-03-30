@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/script.js"></script>
+    <script src="js/fullmn.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/top.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- 상단 부분 -->
+      <header id="header">
+        <div id="header_top">
+          <a href="#" class="logo"
+            ><img src="images/logo_apieu.png" alt=""
+          /></a>
+        </div>
+        <div id="header_bt">
+          <nav>
+            <ul id="info">
+              <li><a href="#">어퓨 브랜드</a></li>
+              <li><a href="#">어퓨룩</a></li>
+              <li><a href="#">베스트</a></li>
+              <li><a href="#">시선고정! 치트키</a></li>
+              <li><a href="#">피부야! 어퓨하고 진정해</a></li>
+              <li><a href="#">#어퓨 구독&좋아요</a></li>
+              <li><a href="#">이벤트</a></li>
+            </ul>
+          </nav>
+          <div id="submn_area">
+            <div id="submn_area_in">
+              <ul>
+                <li>
+                  <a href="#"><h4>유형별</h4></a>
+                  <a href="#">전체보기</a><br />
+                  <a href="#">페이스</a><br />
+                  <a href="#">립</a><br />
+                  <a href="#">아이</a><br />
+                  <a href="#">치크</a><br />
+                  <a href="#">소도구</a>
+                </li>
+                <li>
+                  <a href="#"><h4>라인별</h4></a>
+                  <a href="#">전체보기</a><br />
+                  <a href="#">본투비 매드프루프</a><br />
+                  <a href="#">과즙팡</a><br />
+                  <a href="#">풀샷</a><br />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- 메인이미지부분 -->
+      <div id="main">
+        <ul>
+          <li class="main_l">
+            <!-- <a href="#">
+              <img src="images/main_l.png" alt="" />
+            </a> -->
+          </li>
+          <li class="main_r">
+            <!-- <a href="#">
+              <img src="images/main_r.png" alt="" />
+            </a> -->
+            <img
+              class="bs_icon"
+              src="images/best-seller-158885_1280.png"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
+
+      <!-- 컨텐츠 부분 -->
+      <div id="contents">
+        <section><img src="images/contents1.png" alt="" /></section>
+        <section><img src="images/contents2.png" alt="" /></section>
+        <section><img src="images/contents3.png" alt="" /></section>
+      </div>
+
+      <!-- 영상첨부부분 -->
+      <div id="movie">
+        <section>
+          <h3>#ROUTINE</h3>
+          <p>밝고 빛나는 나를 위한 쉽고 확실한 원포인트 솔루션</p>
+          <div class="m_imgl">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/0FbFBs8hS30?autoplay=1&mute=1&loop=1&playlist=0FbFBs8hS30"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="m_imgr">
+            <img src="images/product01-removebg-preview.png" alt="" />
+          </div>
+          <a class="m_bscon">
+            <img src="images/best-seller-158885_1280.png" alt="" />
+          </a>
+        </section>
+      </div>
+      <!-- 상품판매부분 -->
+      <div id="shop">
+        <section>
+          <div class="shop_imgs">
+            <img src="images/pro01.png" alt="" />
+            <img src="images/pro02.png" alt="" />
+            <img src="images/pro03.png" alt="" />
+          </div>
+          <ul class="shop_btns">
+            <li>
+              <a href="#">BUY IT</a>
+            </li>
+            <li>
+              <a href="#">BUY IT</a>
+            </li>
+            <li>
+              <a href="#">BUY IT</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- 이미지 갤러리 부분 -->
+      <div id="gellary">
+        <a class="btn_l" href="#">a</a>
+        <div id="gr_box">
+          <ul class="gr_photo">
+            <li><img src="images/photo.jpg" alt="" /></li>
+            <li><img src="images/photo2.jpg" alt="" /></li>
+            <li><img src="images/photo3.jpg" alt="" /></li>
+          </ul>
+        </div>
+
+        <a class="btn_r" href="#">b</a>
+      </div>
+      <script>
+        /* 애니메이션 */
+        $(document).ready(function () {
+          var current = 0;
+
+          $(".btn_l").click(function (e) {
+            e.preventDefault();
+            var n = current - 1; // 3 2 1
+            if (n == -3) {
+              n = 0;
+            }
+            console.log(n);
+            move(n);
+          });
+
+          $(".btn_r").click(function (e) {
+            e.preventDefault();
+            var n = current + 1; // 0 1 2
+            if (n == 3) {
+              n = 0;
+            }
+            move(n);
+          });
+
+          function move(i) {
+            if (i == current) return;
+            var currentEl = $(".gr_photo > li").eq(current);
+            var nextEl = $(".gr_photo > li").eq(i);
+
+            currentEl.css({ opacity: 1 }).animate({ opacity: 0 });
+            nextEl.css({ opacity: 0 }).animate({ opacity: 1 });
+
+            current = i;
+          }
+        });
+      </script>
+
+      <!-- 하단부분 -->
+      <footer id="footer">
+        <div id="ft_top">
+          <h3>ABLE C&C</h3>
+          <ul class="btt_ct">
+            <li><a href="#">파트너존</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+          </ul>
+          <ul class="sns_btns">
+            <li>
+              <a href="https://www.facebook.com/APIEU"
+                ><img src="images/sns_facebook.png" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/apieu_cosmetics/"
+                ><img src="images/sns_instagram.png" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/user/myapieu"
+                ><img src="images/sns_youtube.png" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div id="ft_bt">
+          <p>
+            (주)에이블씨엔씨 | 서울 특별시 서초구 서초대로 38번길 12 (서초동
+            마제스타시티 타워 원 13층)
+          </p>
+          <span> E-mail : cs@mynunc.com </span><br />
+          <span>ⓒ COPYRIGHT ABLE C&C ALL RIGHT RESERVED.</span>
+        </div>
+      </footer>
+    </div>
+    <div id="pageup">
+      <a href="#"><img src="images/arrowup.png" /><br />TOP</a>
+    </div>
+  </body>
+</html>
