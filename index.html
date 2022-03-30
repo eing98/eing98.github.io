@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta http-equiv="refresh" content="(지연시간(초));url=(이동할경로)"> -->
+    <meta http-equiv="refresh" content="2.5;url=webptf.html">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/first_main.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#top_line").animate({ width: "70%" }, 1300, function () {
+          $("#top_line").animate({ width: "0%" }, 1300);
+        });
+        $("#bot_line").animate({ width: "70%" }, 1300, function () {
+          $("#bot_line").animate({ width: "0%" }, 1300);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="top_line"></div>
+      <div class="first_con">
+        <h1>PORTFOLIO</h1>
+        <span>by.soyeung</span>
+      </div>
+      <div id="bot_line"></div>
+    </div>
+  </body>
+</html>

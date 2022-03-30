@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/webptf.css" />
+    <LINK href="jscript/needpopup.css" rel="stylesheet" type="text/css">
+    <style>
+      
+      button {
+        padding: 5px 15px;
+        background-color: rgb(233, 233, 233);
+        color: #000;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.5s;
+      }
+      button:hover {
+        background-color: #888;
+      }
+     
+      </style>
+     <!-- <script>
+      window.addEventListener("load", function(){
+        // 버튼을 통해 이미지가 순환되는 갤러리 구현
+        var prependBtn=document.getElementById("prepend");
+        var appendBtn=document.getElementById("append");
+        var gallery=document.querySelector(".porf_l");
+      
+        prependBtn.addEventListener("click", function(){
+         
+      
+          var lastChild=gallery.lastElementChild;
+          var newNode=lastChild.cloneNode(true);
+          console.log(lastChild);
+          console.log(gallery)
+          gallery.removeChild(lastChild);
+          gallery.insertBefore(newNode, gallery.firstElementChild);
+        });
+        appendBtn.addEventListener("click", function(){
+               
+          var firstChild=gallery.firstElementChild;
+          var newNode=firstChild.cloneNode(true);
+          gallery.removeChild(firstChild);
+          gallery.appendChild(newNode);
+        });
+      });
+      </script> -->
+      <script src="jscript/jquery-1.7.2.min.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="contact_nav">
+        <a
+          href="https://mail.naver.com/write/popup?srvid=note&to=thdud981225@naver.com"
+          target="_blank"
+        >
+          <img src="images/email_icon.png" alt="" />
+        </a>
+        <a href="https://open.kakao.com/o/s16cWA8d" target="_blank">
+          <img src="images/kakao_icon.png" alt="" />
+        </a>
+      </div>
+      <div id="profile">
+        <span id="pro_title">Profile</span>
+        <div id="prof_con">
+          <div class="profile_top">
+            <img src="images/nbookme.png" alt="" />
+            <div class="pro_intrd">
+              <h4>INTRODUCTION</h4>
+              <span>
+                문제를 해결하기 위한 고민을 많이 하는 <br/>
+                다양한 분야를 배우는 것에 관심이 있는 <br/>
+                동료들과의 적극적인 커뮤니케이션을 중요시하는 <br/>
+                다양한 도전을 하고 싶은 신입 개발자 윤소영 입니다.
+              </span>
+            </div>
+          </div>
+          <div class="profile_btm">
+            <div class="pro_prof">
+              <h4>PROFILE</h4>
+              <div>
+                <ul>
+                  <li>NAME</li>
+                  <li>Address</li>
+                  <li>E-MAIL</li>
+                </ul>
+              </div>
+              <div>
+                <ul>
+                  <li>윤소영</li>
+                  <li>부산광역시</li>
+                  <li>thdud981225@naver.com</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pro_edu">
+              <h4>EDUCATION</h4>
+              <div class="edu_con">
+                <p>UI/UX기반 프론트엔드 개발자 양성 과정 수료</p>
+                <p>자바기반 백엔드개발자 양성 과정 수료</p>
+              </div>
+            </div>
+            <div class="pro_skill">
+              <h4>SKILL</h4>
+              <ul class="skill_chart">
+                <li>
+                  <h5>HTML</h5>
+                  <span>90%</span>
+                  <div class="skch_gr">
+                    <div class="skch_yl" style="width: 90%;"></div>
+                  </div>
+                </li>
+                <li>
+                  <h5>CSS</h5>
+                  <span>90%</span>
+                  <div class="skch_gr">
+                    <div class="skch_yl" style="width: 90%;"></div>
+                  </div>
+                </li>
+                <li>
+                  <h5>JAVA</h5>
+                  <span>70%</span>
+                  <div class="skch_gr">
+                    <div class="skch_yl" style="width: 70%;"></div>
+                  </div>
+                </li>
+                <li>
+                  <h5>JQUERY</h5>
+                  <span>60%</span>
+                  <div class="skch_gr">
+                    <div class="skch_yl" style="width: 60%;"></div>
+                  </div>
+                </li>
+                <li>
+                  <h5>MY SQL</h5>
+                  <span>70%</span>
+                  <div class="skch_gr">
+                    <div class="skch_yl" style="width: 70%;"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div id="scroll">
+              <img src="images/scrolling-mousewheel-unscreen.gif" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--profile 끝-->
+      <div id="porf_all" style="position: relative; float: left; width: 100%;">
+        <button id="prev" title="prepend" 
+        style="position: absolute; top:85vh; left:20%; z-index: 1000;">prev</button>
+        <button id="next" title="append"
+        style="position: absolute; top:85vh; left:40% ; z-index: 1000;">next</button>
+        <script>
+          $(document).ready(function(){
+                  var n = 0;
+                  $("#porf_all > div").hide();
+                  $("#porf_all > div").eq(n).show();
+                  
+             
+                  $("#next").click(function(e){
+                        e.preventDefault();
+  
+                        n = n + 1;
+                        if(n == 3){
+                          n = 0;
+                        }
+  
+                        $("#porf_all > div").hide();
+                        $("#porf_all > div").eq(n).show().fadeIn(500);
+  
+                
+                  });
+  
+                  $("#prev").click(function(e){
+                        e.preventDefault();
+  
+                        n = n - 1;
+                        if(n == -1){
+                          n = 2;
+                        }
+  
+                        $("#porf_all > div").hide();
+                        $("#porf_all > div").eq(n).show().fadeIn(500);
+  
+                
+                  });
+   
+          });
+        </script>
+        
+        <div id="porf" class="porf01" style="position: absolute; top:0; left: 0; z-index: 300;"> 
+          <div class="porf_l">
+            <div class="poject1">
+              <img src="images/apewcut.png" alt="" />
+            </div>
+            <div class="poject2">
+              <img src="images/SOOPmain.png" alt="" />
+            </div>
+            <div class="poject3">
+              <img src="images/ERPmain.png" alt="" />
+            </div>
+          </div>
+         
+          <div class="porf_r">
+            <span id="porf_title">Portfolio</span>
+            <div class="poject_con">
+              <h4>어퓨</h4>
+              <p>웹사이트 리뉴얼</p>
+              <span>
+                HTML, CSS 를 이용하여<br />
+                리뉴얼한 개인프로젝트입니다.
+              </span>
+  
+              <!-- needpop추가 -->
+              <div class="btn more_btn" data-needpopup-show="#custom-popup1" style="cursor: pointer;">상세페이지</div>
+              <div class="needpopup" id="custom-popup1" data-needpopup-options="custom">
+                <IMG width="900" src="images/Apieu-Mockup.png">
+              </div> 
+              <!-- needpop추가 -->
+  
+              <div class="btn go_btn">
+                <a href="/project/어퓨홈페이지/index.html" target="_blank" style="text-decoration:none">
+                WEB 가기
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+        <div id="porf" class="porf02" style="position: absolute; top:0; left: 0; z-index: 200;"> 
+          <div class="porf_l">
+            <div class="poject1">
+              <img src="images/ERPmain.png" alt="" />
+            </div>
+            <div class="poject2">
+              <img src="images/apewcut.png" alt="" />
+            </div>
+            <div class="poject3">
+              <img src="images/SOOPmain.png" alt="" />
+            </div>
+          </div>
+         
+          <div class="porf_r">
+            <span id="porf_title">Portfolio</span>
+            <div class="poject_con">
+              <h4>ERP Program</h4>
+              <p>ERP 프로그램 제작</p>
+              <span>
+                HTML, CSS, JAVA 등 을 이용하여<br />
+                제작한 팀프로젝트입니다.
+              </span>
+  
+              <!-- needpop추가 -->
+              <div class="btn more_btn" data-needpopup-show="#custom-popup2" style="cursor: pointer; margin-left: 150px;">상세페이지</div>
+              <div class="needpopup" id="custom-popup2" data-needpopup-options="custom">
+                <IMG width="900" src="images/ERPProject_Mockup.png">
+              </div> 
+              <!-- needpop추가 -->
+  
+              <!-- <div href="/어퓨홈페이지/index.html" class="btn go_btn">
+                WEB 가기
+              </div>  -->
+            </div>
+          </div>
+        </div>
+  
+  
+        <div id="porf" class="porf02"  style="position: absolute; top:0; left: 0; z-index: 100;"> 
+          <div class="porf_l">
+            <div class="poject1">
+              <img src="images/SOOPmain.png" alt="" />
+            </div>
+            <div class="poject2">
+              <img src="images/ERPmain.png" alt="" />
+            </div>
+            <div class="poject3">
+              <img src="images/apewcut.png" alt="" />
+            </div>
+          </div>
+         
+          <div class="porf_r">
+            <span id="porf_title">Portfolio</span>
+            <div class="poject_con">
+              <h4>매니지먼트 숲</h4>
+              <p>웹사이트 리뉴얼</p>
+              <span>
+                HTML, CSS 를 이용하여<br />
+                리뉴얼한 팀 프로젝트입니다.
+              </span>
+              <!-- needpop추가 -->
+              <div class="btn more_btn" data-needpopup-show="#custom-popup3" style="cursor: pointer;">상세페이지</div>
+              <div class="needpopup" id="custom-popup3" data-needpopup-options="custom">
+                <IMG width="900" src="images/SOOPproject_Mockup.png">
+              </div> 
+              <!-- needpop추가 -->
+              
+              <div class="btn go_btn">
+                <a href="/project/SOOP_project/index.html" target="_blank"style="text-decoration:none">
+                  WEB 가기
+                </a>
+              </div> 
+            </div>
+          </div>
+        </div>
+        
+      </div><!--<div id="porf_all">닫기-->
+
+    <!--팝업.js-->  
+   
+    <script src="jscript/needpopup.min.js"></script>
+        
+    <script>
+            needPopup.config.custom = {
+                'removerPlace': 'outside',
+                'closeOnOutside': false,
+                onShow: function () {
+                    console.log('needPopup is shown');
+                },
+                onHide: function () {
+                    console.log('needPopup is hidden');
+                }
+            };
+            needPopup.init();
+    </script> 
+
+
+
+
+
+    </div>
+  </body>
+</html>
