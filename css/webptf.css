@@ -1,0 +1,369 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'InkLipquid';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SuncheonB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#wrap {
+  width: 100%;
+}
+
+#contact_nav {
+  position: fixed;
+  top: 45%;
+  right: 100px;
+  width: 70px;
+  z-index: 9999;
+}
+#contact_nav img {
+  width: 70px;
+  height: 70px;
+}
+
+#profile {
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+#pro_title {
+  position: absolute;
+  top: 30px;
+  left: 530px;
+  transform: rotate(345deg);
+  font-size: 150px;
+  font-family: "InkLipquid";
+  color: #475f94;
+  z-index: -9999;
+  opacity: 0.7;
+}
+
+#prof_con {
+  float: left;
+  width: 1200px;
+  height: 700px;
+  margin: 0 auto;
+}
+.profile_top {
+  float: left;
+  width: 100%;
+  height: 300px;
+  margin-top: 100px;
+}
+.profile_top img {
+  float: left;
+  margin-left: 80px;
+  width: 250px;
+  height: 250px;
+}
+#prof_con h4 {
+  font-size: 30px;
+  font-family: "Palatino Linotype";
+  color: #475f94;
+}
+.profile_top p {
+  width: 100%;
+  float: left;
+  font-size: 18px;
+  font-family: "Pretendard";
+  margin-top: 10px;
+}
+.profile_top span {
+  float: left;
+  font-size: 18px;
+  font-family: "Pretendard";
+  margin-top: 10px;
+}
+
+.pro_intrd {
+  float: left;
+  width: 700px;
+  height: 200px;
+  margin-top: 70px;
+  margin-left: 100px;
+}
+.pro_intrd span {
+  margin-left: 10px;
+  line-height: 23px;
+  font-family: 'Pretendard';
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  line-height:28px;
+}
+.profile_btm {
+  float: left;
+  width: 100%;
+  height: 300px;
+}
+.pro_prof {
+  float: left;
+  margin-left: 100px;
+}
+.pro_prof div {
+  float: left;
+  margin-top: 20px;
+  text-align: left;
+  font-size: 16px;
+  font-family: "Pretendard";
+}
+.pro_prof div:last-child {
+  float: left;
+  margin-left: 20px;
+}
+.pro_prof li {
+  margin-top: 10px;
+}
+
+.pro_edu {
+  float: left;
+  margin-left: 70px;
+}
+.edu_con {
+  margin-top: 30px;
+  font-size: 16px;
+  font-family: "Pretendard";
+}
+.edu_con p {
+  margin-top: 10px;
+}
+.pro_skill {
+  float: left;
+  margin-left: 50px;
+}
+
+.skill_chart {
+  margin-top: 20px;
+  width: 400px;
+  height: 200px;
+}
+.skill_chart li {
+  float: left;
+  margin-top: 10px;
+}
+.skill_chart li h5 {
+  float: left;
+  font-size: 16px;
+  font-family: "Pretendard";
+  width: 60px;
+}
+.skill_chart li span {
+  float: left;
+  margin-left: 15px;
+  font-size: 20px;
+  font-family: "Palatino Linotype";
+  color: #475f94;
+}
+.skill_chart li .skch_gr {
+  float: left;
+  width: 250px;
+  height: 10px;
+  margin-left: 20px;
+  margin-top: 5px;
+  border-radius: 10px;
+  background-color: #777;
+}
+.skill_chart li .skch_yl {
+  float: left;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #fddc5c;
+}
+
+#scroll {
+  float: left;
+  margin-top: -20px;
+  margin-left: 48%;
+}
+#scroll img {
+  float: left;
+  width: 130px;
+  height: 100px;
+}
+/* 프로젝트 포트폴리오 */
+#porf {
+  float: left;
+  width: 100%;
+  height: 100vh;
+  background-color: #475f94;
+}
+.porf_l {
+  position: relative;
+  float: left;
+  padding-left: 5%;
+  width: 800px;
+  height: 100%;
+}
+.porf_l div {
+  position: absolute;
+  top: 25%;
+  width: 600px;
+  height: 350px;
+}
+.porf_l img {
+  border: 1px solid #475f94;
+  border-radius: 10px;
+  box-shadow: -10px 20px 10px #0000004d;
+  transform: rotateY(30deg);
+}
+.poject1 img {
+  width: 100%;
+  height: 100%;
+}
+.poject2 img {
+  width: 80%;
+  height: 80%;
+}
+.poject3 img {
+  width: 50%;
+  height: 50%;
+}
+
+.poject1 {
+  margin-left: 190px;
+  z-index: 3;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.poject1:hover {
+  margin-left: 190px;
+  z-index: 3;
+  transform-style: flat;
+  perspective: 8000px;
+  transition: 1s;
+}
+.poject2 {
+  margin-left: 120px;
+  margin-top: 30px;
+  z-index: 2;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+.poject3 {
+  margin-left: 60px;
+  margin-top: 60px;
+  z-index: 1;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+.porf_r {
+  position: relative;
+  left: 50%;
+  text-align: center;
+  width: 700px;
+  height: 100%;
+}
+#porf_title {
+  position: absolute;
+  top: 80px;
+  left: 20%;
+  font-size: 170px;
+  font-family: "InkLipquid";
+  color: #fddc5c;
+}
+
+.poject_con {
+  position: absolute;
+  top: 30%;
+  left: 150px;
+  text-align: center;
+  width: 400px;
+}
+.poject_con h4 {
+  padding-top: 100px;
+  font-size: 50px;
+  font-family: "Pretendard";
+  color: #fddc5c;
+  font-weight: bold;
+}
+.poject_con p {
+  margin: 20px 0;
+  font-size: 23px;
+  font-family: "Pretendard";
+  color: #fff;
+}
+.poject_con span {
+  display: block;
+  font-size: 20px;
+  font-family: "Pretendard";
+  font-weight: 300;
+  line-height: 25px;
+  color: #fff;
+}
+.more_btn {
+  margin: 50px 20px 0 60px;
+}
+.go_btn {
+  margin-top: 50px;
+}
+.go_btn a {
+  color: #475f94;
+}
+.btn {
+  padding-top: 10px;
+  float: left;
+  width: 130px;
+  height: 30px;
+  font-size: 20px;
+  font-family: "Pretendard";
+  font-weight: 400;
+  border-radius: 10px;
+  background: transparent;
+  background-position: 1% 50%;
+  background-color: #fff;
+  transition: all 0.3s ease-out;
+  text-align: center;
+  color: #475f94;
+}
+.btn:hover {
+  background-color: #fddc5c;
+  color: #475f94;
+  font-weight: bold;
+  cursor: pointer;
+}
+#contact {
+  float: left;
+  width: 100%;
+  height: 90px;
+  background-color: #fddc5c;
+}
+#contact li {
+  float: left;
+  margin-top: 35px;
+  margin-left: 200px;
+  font-size: 25px;
+  font-family: "Pretendard";
+  color: #777;
+}
+#contact li img {
+  width: 20px;
+}
+#contact .cont_title {
+  float: left;
+  margin: 0 100px;
+  font-size: 75px;
+  font-family: "InkLipquid";
+  color: #475f94;
+}
+
+#porf_all button{
+  width: 100px;
+  height: 30px;
+  background-color: #fddc5c;
+}
